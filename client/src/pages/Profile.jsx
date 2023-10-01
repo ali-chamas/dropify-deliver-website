@@ -18,7 +18,7 @@ const Profile = () => {
     useEffect(()=>{
 
       const fetchOrder=async()=>{
-        const res = await fetch(`http://localhost:3001/orders/${user.email}`)
+        const res = await fetch(`https://dropify.onrender.com/orders/${user.email}`)
         const data = await res.json()
         let sorted = [...data].sort((a,b)=>b.id-a.id)
         setOrders(sorted)

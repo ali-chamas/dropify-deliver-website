@@ -9,7 +9,7 @@ const ProfilePopup = ({setShow,email,name,address}) => {
      
     
   const updateProfie=async()=>{
-     const res = await fetch(`http://localhost:3001/users/${email}`,{
+     const res = await fetch(`https://dropify.onrender.com/users/${email}`,{
       method:'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name:newName, address:newAddress})    

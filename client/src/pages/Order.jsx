@@ -44,7 +44,7 @@ const Order = () => {
     const handleSubmit=async()=>{
 
         setLoading(true)
-        const res =  await fetch('http://localhost:3001/orders',{
+        const res =  await fetch('https://dropify.onrender.com/orders',{
             method:'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ orderName,fromLocation,toLocation,orderValue,orderDate,user,orderWeight,orderMessage})    

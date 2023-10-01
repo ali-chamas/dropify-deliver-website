@@ -13,7 +13,7 @@ const Login = () => {
     useEffect(()=>{
 
         const fetchUsers=async ()=>{
-            const res = await fetch('http://localhost:3001/users');
+            const res = await fetch('https://dropify.onrender.com/users');
             const data = await res.json()
             setUserData(data)
         }
@@ -49,7 +49,7 @@ const Login = () => {
                 setLoggedIn(true)
                 window.localStorage.setItem('user',JSON.stringify(user))
                 
-            setTimeout(function(){ window.location.href="http://localhost:3000/" }, 1000);
+            setTimeout(function(){ window.location.href="https://dropify.onrender.com/" }, 1000);
             setLoading(false)
             }
             else{

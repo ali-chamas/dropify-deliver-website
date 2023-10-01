@@ -18,7 +18,7 @@ const AdminNumbers = ({orders,changeCost,changeStatus,setChangeCost}) => {
         }
         
         const updateDash=async()=>{
-        const res = await fetch('http://localhost:3001/dashboard/1',{
+        const res = await fetch('https://dropify.onrender.com/dashboard/1',{
             method:'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({orders:count,earnings:total })  
@@ -27,7 +27,7 @@ const AdminNumbers = ({orders,changeCost,changeStatus,setChangeCost}) => {
         
         }
         const fetchDashboard=async()=>{
-            const res = await fetch('http://localhost:3001/dashboard');
+            const res = await fetch('https://dropify.onrender.com/dashboard');
             const data=await res.json()
             setEarning(data[0].earnings)
             setTotalOrders(data[0].orders)

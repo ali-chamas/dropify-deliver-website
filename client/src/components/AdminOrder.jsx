@@ -25,7 +25,7 @@ const [orderStatus,setStatus]=useState(order.orderStatus)
 
 
  const UpdateOrder=async(id)=>{
-    const res = await fetch(`http://localhost:3001/orders/${id}`,{
+    const res = await fetch(`https://dropify.onrender.com/orders/${id}`,{
       method:'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({orderStatus,deliveryValue})

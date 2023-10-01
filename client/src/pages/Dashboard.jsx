@@ -17,7 +17,7 @@ const [changeCost,setChangeCost]=useState('')
         useEffect(()=>{
           
           const fetchOrders=async()=>{
-            const res = await fetch('http://localhost:3001/orders');
+            const res = await fetch('https://dropify.onrender.com/orders');
             const data=await res.json()
             let sorted = [...data].sort((a,b)=>b.id-a.id)
             setorders(sorted)
