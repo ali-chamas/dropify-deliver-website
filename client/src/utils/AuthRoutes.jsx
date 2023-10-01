@@ -7,7 +7,7 @@ const AuthRoutes=()=>{
     const loggedIn = window.localStorage.getItem('user')
     return (
         
-        loggedIn!=='' ? JSON.parse(loggedIn)==='admin@admin.com'?<Navigate to='/dashboard'/> : <Navigate to='/'/> :<Outlet/>
+        loggedIn!=='' ?  <Navigate to='/'/> :<Outlet/>
         
         )
     
