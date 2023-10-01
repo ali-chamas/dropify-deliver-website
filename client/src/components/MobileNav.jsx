@@ -25,7 +25,7 @@ const MobileNav = ({darkMode,setDarkMode,user,setUser}) => {
           <a href="/order" >Order a delivery</a>
           <button className='opacity-80 hover:opacity-100 bg-black p-2 px-6 rounded-full text-white dark:bg-gray-100 text-sm dark:text-black '
                 
-                onClick={()=>{setUser(null);window.localStorage.setItem('user','');setTimeout(function(){ window.location.href="http://localhost:3000/auth" }, 1000);}}>
+                onClick={()=>{setUser(null);window.localStorage.setItem('user','');setTimeout(function(){ window.location.href="https://dropify-hazel.vercel.app/auth" }, 1000);}}>
                       Sign Out
                 </button>
           </div>

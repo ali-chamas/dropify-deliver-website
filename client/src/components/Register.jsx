@@ -66,7 +66,7 @@ const Register = () => {
             const data =await res.json()
             
             window.localStorage.setItem('user',`{"name":"${name}","email":"${email}","password":"${password}","address":"${address}"}`)
-            setTimeout(function(){window.location.href='http://localhost:3000/'},3000)
+            setTimeout(function(){window.location.href='https://dropify-hazel.vercel.app/'},3000)
             
         
         

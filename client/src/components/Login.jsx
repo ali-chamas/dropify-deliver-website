@@ -15,6 +15,7 @@ const Login = () => {
         const fetchUsers=async ()=>{
             const res = await fetch('https://dropify.onrender.com/users');
             const data = await res.json()
+            console.log(data)
             setUserData(data)
         }
         
@@ -49,7 +50,7 @@ const Login = () => {
                 setLoggedIn(true)
                 window.localStorage.setItem('user',JSON.stringify(user))
                 
-            setTimeout(function(){ window.location.href="https://dropify.onrender.com/" }, 1000);
+            setTimeout(function(){ window.location.href="https://dropify-hazel.vercel.app/" }, 1000);
             setLoading(false)
             }
             else{

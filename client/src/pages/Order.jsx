@@ -53,7 +53,7 @@ const Order = () => {
                     console.log(data)
             
             setLoading(false)
-            setTimeout(function(){window.location.href='http://localhost:3000/profile'},2000)
+            setTimeout(function(){window.location.href='https://dropify-hazel.vercel.app/profile'},2000)
 
     }
     
