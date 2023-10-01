@@ -51,7 +51,7 @@ app.post("/users",(req,res)=>{
 
 app.put("/users/:email",(req,res)=>{
     const email=req.params.email;
-    const q = "UPDATE `dropify`.`users` SET `name` = ? , `address`= ?  WHERE (`email` = ?); "
+    const q = "UPDATE users SET `name` = ? , `address`= ?  WHERE (`email` = ?); "
 
     const values =[req.body.name,req.body.address]
 
@@ -86,7 +86,7 @@ app.get("/orders/:email",(req,res)=>{
 
 app.put("/orders/:id",(req,res)=>{
     const id=req.params.id;
-    const q = "UPDATE `dropify`.`orders` SET `orderStatus` = ? , `deliveryValue`= ?  WHERE (`id` = ?); "
+    const q = "UPDATE orders SET `orderStatus` = ? , `deliveryValue`= ?  WHERE (`id` = ?); "
 
     const values =[req.body.orderStatus,req.body.deliveryValue]
 
@@ -99,7 +99,7 @@ app.put("/orders/:id",(req,res)=>{
 })
 
 app.post("/orders",(req,res)=>{
-    const q = "INSERT INTO `dropify`.`orders` ( `orderName`, `fromLocation`, `toLocation`, `orderValue`, `orderDate`, `user`, `orderWeight`, `orderMessage`) VALUES (?)"
+    const q = "INSERT INTO orders ( `orderName`, `fromLocation`, `toLocation`, `orderValue`, `orderDate`, `user`, `orderWeight`, `orderMessage`) VALUES (?)"
     const values = [req.body.orderName,
         
         req.body.fromLocation,
@@ -137,7 +137,7 @@ app.get("/dashboard",(req,res)=>{
 
 app.put("/dashboard/:id",(req,res)=>{
     
-    const q = "UPDATE `dropify`.`dashboard` SET `orders` = ? , `earnings`= ?  WHERE (`id` = 1); "
+    const q = "UPDATE dashboard SET `orders` = ? , `earnings`= ?  WHERE (`id` = 1); "
 
     const values =[req.body.orders,req.body.earnings]
 
