@@ -1,13 +1,16 @@
 import express from 'express'
 import mysql from 'mysql'
 import cors from 'cors'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 export const app = express()
 
 export const db = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"MIMOmimo1",
-    database:"dropify"
+    host:(process.env.DB_HOST),
+    user:process.env.DB_USERNAME,
+    password:process.env.DB_PASSWORD,
+    database:process.env.DB_DBNAME
 })
 
 app.use(express.json())
