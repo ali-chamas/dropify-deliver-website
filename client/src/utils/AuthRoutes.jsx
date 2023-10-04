@@ -5,9 +5,10 @@ import { Navigate, Outlet } from 'react-router-dom'
 
 const AuthRoutes=()=>{
     const loggedIn = window.localStorage.getItem('user')
+
     return (
         
-        loggedIn!=='' ?  <Navigate to='/'/> :<Outlet/>
+        loggedIn!==''  ?  <Navigate to='/'/> :<Outlet/>
         
         )
     

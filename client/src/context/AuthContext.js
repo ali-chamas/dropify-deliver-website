@@ -5,23 +5,12 @@ import {createContext,useContext,useState} from 'react'
  const AuthContext = createContext()
 
  export const AuthContectProvider = ({children})=>{
-    const [user,setUser]=useState()
-    const [loggedIn,setLoggedIn]=useState(false)
-    
-    const login = (data)=>{
-       setUser(data)
-       setLoggedIn(true)
-    }
-    const signOut=()=>{
-        setUser(null)
-        setLoggedIn(false)
-    }
-   
+    const [orderContext,setOrderContext]=useState()
     
    
 
     return (
-        <AuthContext.Provider value={{user,loggedIn,signOut,login,setUser,setLoggedIn}}>
+        <AuthContext.Provider value={{orderContext,setOrderContext}}>
             {children}
         </AuthContext.Provider>
     )

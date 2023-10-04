@@ -3,11 +3,16 @@ import React, { useEffect, useState } from 'react'
 import light from '../assets/light.jpg'
 import dark from '../assets/dark.jpg'
 import {motion as m} from 'framer-motion'
+import { useAuthContext } from '../context/AuthContext'
+
+
+
 const Order = () => {
 
     const users = JSON.parse(window.localStorage.getItem('user'))
     const user =users.email
     
+    const {setOrderContext}=useAuthContext()
 
     let date=new Date()
     let month = date.getUTCMonth() + 1; //months from 1-12
@@ -53,6 +58,7 @@ const Order = () => {
                     console.log(data)
             
             setLoading(false)
+            setOrderContext(orderDate)
             setTimeout(function(){window.location.href='https://dropify-hazel.vercel.app/profile'},2000)
 
     }

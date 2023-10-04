@@ -34,8 +34,9 @@ const AnimRoutes = () => {
 
  <Route path='/' element={<Hero/>}/>
 
+<Route element={<AuthRoutes/>}>
  <Route path='/auth' element={<Auth/>}/>
-
+</Route>
 
 <Route element={<PrivateRoutes/>}>
    <Route element={<ProtectedAdmin/>}>

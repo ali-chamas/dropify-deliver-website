@@ -38,6 +38,7 @@ const [scrolled,setScrolled]=useState(false)
 
 
                 {user ?
+                user.email!=='admin@admin.com' ?
                 <div className='flex gap-5 items-center'>
                 <a href="/order" className='opacity-80 hover:opacity-100 bg-black p-3 px-6 rounded-full text-white dark:bg-gray-100 dark:text-black'>Order a delivery</a>
 
@@ -61,12 +62,24 @@ const [scrolled,setScrolled]=useState(false)
                 </button>
                    </div>  }
                 
-                  
-                  
+                
                 
                 </div>
                 
                 </div>
+                  :(
+                    <div className='flex items-center gap-5'>
+
+                    <a href="/dashboard" className='hover:opacity-80 bg-red-500 p-2 rounded-full text-white'>Dashboard</a>
+
+                    <button className='opacity-80 hover:opacity-100 bg-black p-2 px-6 rounded-full text-white dark:bg-gray-100 text-sm dark:text-black'
+               
+                    onClick={()=>{setUser(null);window.localStorage.setItem('user','');setTimeout(function(){ window.location.href="https://dropify-hazel.vercel.app/auth" }, 1000);}}>
+                          Sign Out
+                    </button>
+                    </div>
+                 )
+                 
                 :
                 <a href="/auth"
                 className='opacity-80 hover:opacity-100 bg-black p-3 px-6 rounded-full text-white dark:bg-gray-100 dark:text-black'

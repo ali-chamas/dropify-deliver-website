@@ -1,6 +1,8 @@
-import React, {  useEffect, useMemo, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import AdminOrder from '../components/AdminOrder'
 import AdminNumbers from '../components/AdminNumbers'
+import { useAuthContext } from '../context/AuthContext'
+
 
 const Dashboard = () => {
  
@@ -13,6 +15,7 @@ const [order,setOrder]=useState()
 
 const [ changeStatus,setChangeStatus]=useState('')
 const [changeCost,setChangeCost]=useState('')
+const {orderContext} = useAuthContext()
 
         useEffect(()=>{
           
@@ -25,13 +28,15 @@ const [changeCost,setChangeCost]=useState('')
           }
           
 
-         
+            
          
          
           fetchOrders()
+          console.log('l')
+        
           
          
-        },[changeStatus,changeCost])
+        },[changeStatus,changeCost,orderContext])
 
 
  
