@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useAuthContext} from '../context/AuthContext'
+
 import {motion as m} from 'framer-motion'
 
 const Register = () => {

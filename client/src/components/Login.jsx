@@ -7,7 +7,7 @@ const Login = () => {
     const [password,setPassword]=useState('')
     const [userData,setUserData]=useState()
     const [userError,setUserError]=useState(false)
-    const {setUser,setLoggedIn}=useAuthContext()
+  
     const [formError,setFormError]=useState(true)
     const [loading,setLoading]=useState(false)
     useEffect(()=>{
@@ -46,8 +46,8 @@ const Login = () => {
         userData.map(user=>{
 
             if(email === user.email && password===user.password ){
-                setUser(user)
-                setLoggedIn(true)
+                
+                
                 window.localStorage.setItem('user',JSON.stringify(user))
                 
             setTimeout(function(){ window.location.href="https://dropify-hazel.vercel.app/" }, 1000);
@@ -56,10 +56,10 @@ const Login = () => {
             else{
                 
                 setTimeout(function(){ setUserError(true) }, 2000);
-                setLoading(false)
+                
             }
             
-           
+            setLoading(false)
             
         })
         
